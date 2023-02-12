@@ -16,9 +16,11 @@ app.get("/", (_req, res) => {
 
 app.post("/post", (req, res) => {
   if (req.body.auth === auth) {
-    res.status(200).send(true);
+    return res.status(200).send(true);
   } else {
-    res.status(400).send(false);
+    console.error(req);
+
+    return res.status(400).send(false);
   }
 });
 
