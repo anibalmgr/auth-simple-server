@@ -8,18 +8,21 @@ const app = express();
 const port = process.env.PORT;
 const auth = process.env.AUTH;
 
-app.use(cors());
+app.all("/", (req, res) =>
+  console.log({ headers: req.headers, res: res.statusMessage })
+);
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 app.get("/", (_req, res) => {
   res.send("Hello, what are you doing here?");
 });
 
-app.post("/post", (req, res) => {
-  if (req.body.auth === auth) {
+app.post("/blog-auth", (req, res) => {
+  console.log(req);
+
+  if (req.body?.auth === auth) {
     return res.status(200).send(true);
   } else {
-    console.error(req);
-
     return res.status(400).send(false);
   }
 });
