@@ -1,16 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import bodyParser from "body-parser"
 
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.json())
 const port = process.env.PORT;
 const auth = process.env.AUTH;
 
-app.all("/", (req, res) =>
-  console.log({ headers: req.headers, res: res.statusMessage })
-);
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 app.get("/", (_req, res) => {
@@ -18,9 +17,9 @@ app.get("/", (_req, res) => {
 });
 
 app.post("/blog-auth", (req, res) => {
-  console.log(req);
+  console.log(req.body);
 
-  if (req.body?.auth === auth) {
+  if (req.body?.pass === auth) {
     return res.status(200).send(true);
   } else {
     return res.status(400).send(false);
