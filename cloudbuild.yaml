@@ -8,6 +8,7 @@ steps:
     env:
       - "AUTH=${_AUTH}"
       - "PORT=${_PORT}"
+      - "TEST=${_TEST}"
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy"]
 timeout: "1600s"
