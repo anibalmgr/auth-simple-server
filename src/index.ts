@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 const port = process.env.PORT;
 const auth = process.env.AUTH;
-const test = process.env.Test
+const test = process.env.TEST
 
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
