@@ -9,11 +9,12 @@ const app = express();
 app.use(bodyParser.json())
 const port = process.env.PORT;
 const auth = process.env.AUTH;
+const test = process.env.Test
 
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 app.get("/", (_req, res) => {
-  res.send("Hello, what are you doing here?");
+  res.send(`Hello, what are you doing there? This is a ${test}`);
 });
 
 app.post("/blog-auth", (req, res) => {
