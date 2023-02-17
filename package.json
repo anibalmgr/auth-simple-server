@@ -5,10 +5,9 @@
   "main": "dist/index.js",
   "author": "",
   "scripts": {
-    "install": "printenv > .env && npm install",
     "dev": "nodemon src/index.ts",
-    "build": "tsc",
-    "create-env": "printenv > .env",
+    "createenv": "printenv > .env",
+    "build": "npm run createenv && tsc",
     "start": "node dist/index.js",
     "prestart": "npm run build",
     "gcp-build": "npm run build"
