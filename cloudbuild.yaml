@@ -10,5 +10,5 @@ steps:
       - "PORT=${_PORT}"
       - "TEST=${_TEST}"
   - name: "gcr.io/cloud-builders/gcloud"
-    args: ["app", "deploy"]
+    args: ["create-env", "app", "deploy"]
 timeout: "1600s"
