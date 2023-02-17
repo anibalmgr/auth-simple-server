@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "author": "",
   "scripts": {
+    "install": "printenv > .env && npm install",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "create-env": "printenv > .env",
