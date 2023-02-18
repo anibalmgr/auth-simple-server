@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "author": "",
   "scripts": {
-    "create-env": "printenv > dist/.env",
+    "create-env": "printenv > .env",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",

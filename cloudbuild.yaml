@@ -4,11 +4,11 @@ steps:
     args: ["install"]
   - name: node:18.12.1
     entrypoint: npm
-    args: ["run", "create-env"]
     env:
       - "AUTH=${_AUTH}"
       - "PORT=${_PORT}"
       - "TEST=${_TEST}"
+    args: ["run", "create-env"]
   - name: "gcr.io/cloud-builders/gcloud"
     args: ["app", "deploy"]
 timeout: "1600s"
