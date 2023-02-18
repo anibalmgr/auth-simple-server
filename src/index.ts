@@ -7,9 +7,9 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
-const port = process.env.PORT;
-const auth = process.env.AUTH;
-const test = process.env.TEST;
+const port = process.env._PORT;
+const auth = process.env._AUTH;
+const test = process.env._TEST;
 
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
