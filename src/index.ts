@@ -11,7 +11,7 @@ const port = process.env.PORT;
 const auth = process.env.AUTH;
 const test = process.env.TEST;
 
-app.use(cors({ origin: "https://carmevidal.netlify.app", credentials: true }));
+app.use(cors({ origin: ["https://carmevidal.netlify.app", "https://carmevidal.uk"], credentials: true }));
 
 app.get("/", (_req, res) => {
   res.send(`Hello, what are you doing there? This is a ${test}`);
